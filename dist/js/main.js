@@ -1,30 +1,21 @@
-document.addEventListener('DOMContentLoaded', function(){
-    const buttons = document.querySelectorAll('[data-tab-button]');
-    
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', function(botao) {
-            const abaAlvo = botao.target.dataset.tabButton;
-            const aba = document.querySelector(`[data-tab-id="${abaAlvo}"]`);
-            escondeTodasAbas();
-            aba.classList.add('shows__list--is-active');
-            removeBotaoAtivo();
-            botao.target.classList.add('shows__tabs__button--is-active');
+    function openTab(tabName) {
+        // Esconde todos os conteúdos
+        var contents = document.querySelectorAll('.tab-content');
+        contents.forEach(function(content) {
+        content.classList.remove('active-content');
         });
+    
+        // Remove a classe ativa de todas as abas
+        var tabs = document.querySelectorAll('.tab');
+        tabs.forEach(function(tab) {
+        tab.classList.remove('active-tab');
+        });
+    
+        // Mostra o conteúdo da aba selecionada
+        document.getElementById(tabName).classList.add('active-content');
+    
+        // Marca a aba como ativa
+        var activeTab = document.querySelector('.tab[onclick="openTab(\'' + tabName + '\')"]');
+        activeTab.classList.add('active-tab');
     }
-});
-
-function removeBotaoAtivo() {
-    const buttons = document.querySelectorAll('[data-tab-button]');
-
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('shows__tabs__button--is-active');
-    }
-}
-
-function escondeTodasAbas() {
-    const tabsContainer = document.querySelectorAll('[data-tab-id]');
-
-    for (let i = 0; i < tabsContainer.length; i++) {
-        tabsContainer[i].classList.remove('shows__list--is-active');
-    }
-}
+    

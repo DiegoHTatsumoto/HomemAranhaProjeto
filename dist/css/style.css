@@ -21,7 +21,7 @@ header {
   align-items: center;
 }
 
-h1 {
+.header h1 {
   font-size: 2.5rem;
   font-weight: bold;
   font-family: Anton, serif;
@@ -49,90 +49,51 @@ img {
   margin: 60px 90px;
 }
 
-h2 {
-  padding: 0 auto;
+.historia h2 {
+  padding: 20px;
+  padding-left: 80px;
   font-family: Anton, serif;
 }
 
-p {
+.historia p {
+  padding: 20px;
+  padding-left: 80px;
   font-family: Poppins, sans-serif;
 }
 
-.shows {
-  padding: 2vw 5.6vw;
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #ccc;
 }
-.shows__list {
-  margin-top: 44px;
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  margin-right: 5px;
+  background-color: #f1f1f1;
+}
+
+.tab:hover {
+  background-color: #ddd;
+}
+
+.active-tab {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+.tab-content {
   display: none;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
-}
-.shows__list--is-active {
-  display: grid;
-}
-.shows__list__item img {
-  max-width: 100%;
-  border-radius: 4px;
-}
-.shows__tabs {
-  display: flex;
-  justify-content: center;
-}
-.shows__tabs__button {
-  font-size: 20px;
-  border: none;
-  padding-bottom: 5px;
-  background: none;
-  text-transform: uppercase;
-  margin: 0 1vw;
-  cursor: pointer;
-  border-bottom: 5px solid transparent;
-}
-.shows__tabs__button--is-active {
-  border-bottom: 5px solid blue !important;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  background-color: #f9f9f9;
 }
 
-.listaH {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.listaH img {
-  width: 150px;
-  height: auto;
-  border-radius: 10px;
-  margin-right: 20px;
-}
-
-.listaH h3 {
-  font-size: 20px;
-  color: #333;
+.active-content {
   display: block;
-}
-
-.listaH p {
-  font-size: 14px;
-  color: #666;
-}
-
-.listaH button {
-  background-color: #ff6347;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.listaH:hover {
-  transform: translateY(-5px);
 }
 
 footer {
